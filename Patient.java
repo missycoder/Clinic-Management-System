@@ -1,17 +1,33 @@
-public class Patient extends Person {
-    private static int nextID = 1;
-    private String id;
+import java.util.Scanner;
 
-    Patient(String name, int age, double temperature) {
-        suepr(name,age,temperature);
-        this.id = "P" + nextID++;
+public class Patient extends Person {
+    private int id;
+
+    public Patient(Scanner scanner, String name, int age, double temperature, int id) {
+        super(name, age, temperature);
+        this.id = id;
     }
 
-    String getID() {
+    public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String getID() {
+        return String.valueOf(id);
+    }
+
+    @Override
     public String toString() {
-        return "Name:" + name + ", ID:" + ID +", Age:" + age +", Temperature:" + temperature + "C";
+        return "Patient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", temperature=" + temperature +
+                '}';
     }
 }

@@ -1,17 +1,33 @@
-public class extends Person {
-    private static int nextID = 1;
-    private String staffID;
+import java.util.Scanner;
 
-    Nurse(String name, int age, double temperature) {
+public class Nurse extends Person {
+    private int staffID;
+
+    public Nurse(Scanner scanner, String name, int age, double temperature, int staffID) {
         super(name, age, temperature);
-        this.staffID = "S" +nextID++;
+        this.staffID = staffID;
     }
 
-    String getStaffID() {
+    public int getStaffID() {
         return staffID;
     }
 
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
+    }
+
+    @Override
+    public String getID() {
+        return String.valueOf(staffID);
+    }
+
+    @Override
     public String toString() {
-        return "Name:" + name + ", "Staff ID:" + staffID +", Age:" + age +", Temperature:" + temperature + "C";
+        return "Nurse{" +
+                "staffID=" + staffID +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", temperature=" + temperature +
+                '}';
     }
 }
