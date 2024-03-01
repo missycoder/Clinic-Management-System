@@ -3,6 +3,14 @@ public abstract class Person {
     protected int age;
     protected double temperature;
 
+     // Default Constructor
+     public Person() {
+        this.name = " ";
+        this.age = 0;
+        this.temperature = 0.0;
+    }
+
+    // Overloaded Constructor
     public Person(String name, int age, double temperature) {
         this.name = name;
         this.age = age;
